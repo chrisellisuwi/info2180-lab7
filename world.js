@@ -12,10 +12,12 @@ window.onload = function () {
                     if (request.status == 200){
                         let ans = request.responseText;
                         result.innerHTML = ans;
+                        
+                        alert(result.textContent);
                     }
                 }
             }
-            request.open('GET', 'world.php?country=' + txtBox.value, true);
+            request.open('GET', 'world.php?all="true"&country=' + txtBox.value, true);
             request.send();
         }
     });
